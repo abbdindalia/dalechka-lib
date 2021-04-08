@@ -15,5 +15,8 @@
     "psr-4": {
       "abbdin\\": "abbdin"
     }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9"
   }
 }
