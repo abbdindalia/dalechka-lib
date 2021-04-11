@@ -24,15 +24,18 @@ class MyLog extends LogAbstract implements LogInterface
 
     public function _write()
     {
-        foreach ($this->log as $value) {
-            echo $value;
+        $log = '';
+        foreach($this->log as $value)
+        {
+            $log .= $value."\n";
         }
+        echo $log;
         $d = new \DateTime();
-        $file = "./Log/". $d->format('d-m-Y\TH_i_s_u').".log";
+        $file = "./Log/". $d->format('d-m-Y\TH_i_s.u').".log";
         if (!is_dir('./Log/'))
         {
             mkdir("./Log/");
         }
-        file_put_contents($file, $this->log);
+        file_put_contents($file,$log);
     }
 }
