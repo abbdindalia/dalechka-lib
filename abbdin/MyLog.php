@@ -38,4 +38,8 @@ class MyLog extends LogAbstract implements LogInterface
         }
         file_put_contents($file,$log);
     }
+    public static function write():void{
+        self::Instance()->_write();
+    }
 }
+?>
